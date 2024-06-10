@@ -1,38 +1,88 @@
-.App {
-  text-align: center;
+/* IMPORT GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* IMPOSTAZIONI GENERALI */
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* IMPOSTAZIONI VARIABILI */
+:root{
+    --font-small: 14px;
+    --font-title: 35px;
+    --font-paragraph: 15px;
+    --padding-default: 10px;
+    --padding-medium: 20px;
+    --margin-default: 10px;
+    --margin-medium: 20px;
+    --font-weigth-regular: 400;
+    --font-weigth-semi-bold: 500;
+    --font-weight-bold: 600;
+    --color-oro: #C8A772;
+    --color-nero: #1F292E;
+    --color-bronzo: #7B6F6C;
+    --color-grigio-caldo: #EDEBE2;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body{
+    font-family: "Montserrat", sans-serif;
+    font-size: var(--font-paragraph);
+    font-style: normal;
+    font-weight: var(--font-weigth-regular);
+    scroll-behavior: smooth;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a{
+    color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Chrome, Safari, Opera */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px #1F292E inset !important;
+    box-shadow: 0 0 0 1000px #1F292E inset !important;
+    -webkit-text-fill-color: white !important;
+    caret-color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Firefox */
+input:-moz-autofill,
+input:-moz-autofill:hover, 
+input:-moz-autofill:focus, 
+input:-moz-autofill:active {
+    background-color: #1F292E !important;
+    color: white !important;
+    caret-color: white;
+}
+
+/* Internet Explorer/Edge */
+input:-ms-autofill,
+input:-ms-autofill:hover, 
+input:-ms-autofill:focus, 
+input:-ms-autofill:active {
+    background-color: #1F292E !important;
+    color: white !important;
+    caret-color: white;
+}
+
+.pre-title{
+    font-size: var(--font-small);
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+    color: var(--color-oro);
+    margin-bottom: var(--margin-default);
+    letter-spacing: 6px;
+}
+
+.title{
+    font-size: var(--font-title);
+    margin-bottom: var(--margin-medium);
+    font-weight: var(--font-weigth-semi-bold);
+    text-align: center;
 }

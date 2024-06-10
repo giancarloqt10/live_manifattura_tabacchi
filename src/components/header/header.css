@@ -1,0 +1,130 @@
+/* ======== HEADER ============ */
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    height: 100vh;
+    line-height: 1;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('../../assets/images/hero_bg.png') center center no-repeat;
+    color: white;
+}
+
+.top{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.banner{
+    text-align: center;
+    padding: 10px;
+    background: var(--color-nero);
+    color: white;
+}
+
+.banner a{
+    text-decoration: underline;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 100px 0;
+}
+
+.navbar.scrolled{
+    background: white;
+    color: black;
+    padding: 10px 100px;
+}
+
+.logo{
+    height: 90px;
+    width: 155px;
+}
+
+.navbar.scrolled .logo{
+    height: 70px;
+}
+
+.logo-img{
+    height: 100%;
+}
+
+.nav-links ul{
+    display: flex;
+}
+
+.nav-links ul >:not(:last-child){
+    margin-right: 30px;
+}
+
+.nav-links ul li a{
+    color: white;
+}
+
+.navbar.scrolled .nav-links ul li a{
+    color: black;
+}
+
+.nav-links ul li .prenota{
+    border: 1px solid white;
+    padding: 15px;
+}
+
+.contact-btn2{
+    display: none;
+}
+
+.navbar.scrolled .nav-links ul .prenota{
+    background: var(--color-nero);
+    color: white;
+}
+
+.nav-icon{
+    display: none;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.text-header{
+    position: absolute;
+    top: calc(((100vh - 126px)/2) + 60px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.paragraph{
+    text-align: center;
+}
+
+.paragraph a{
+    text-decoration: underline;
+}
+
+.scopri{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scopri-testo{
+    color: white;
+    margin-bottom: 12px;
+}
+
+.linea-verticale{
+    height: 20px;
+    width: 2px;
+    background: white;
+}
