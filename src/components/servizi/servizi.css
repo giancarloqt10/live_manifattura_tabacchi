@@ -1,0 +1,71 @@
+/* ========= SERVIZI =========== */
+.servizi{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.servizio{
+    color: white;
+    border: 0.8px solid var(--color-oro);
+}
+
+.design-mood{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../assets/images/image4.png') center center no-repeat;
+    background-size: cover;
+}
+
+.vista{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../assets/images/image5.png') center center no-repeat;
+    background-size: cover;
+}
+
+.lifestyle{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../assets/images/image6.png') center center no-repeat;
+    background-size: cover;
+}
+
+.description{
+    position: relative;
+    transition: all ease-in-out .3s;
+    height: 100%;
+    min-height: 500px;
+}
+
+.description:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.testo-servizio{
+    padding: 0 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.description:hover .testo-servizio{
+    top: 55%;
+}
+
+.text-transition{
+    transition: all ease-in-out .3s;
+}
+
+.testo-servizio .title, .testo-servizio .pre-title{
+    text-align: left;
+}
+
+.testo-servizio p{
+    transition: all ease 1s;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.description:hover p {
+    height: 150px;
+    overflow: visible;
+    opacity: 1;
+    margin-top: 20px;
+}

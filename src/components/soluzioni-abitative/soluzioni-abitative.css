@@ -1,0 +1,103 @@
+/* ======= SOLUZIONI ABITATIVE ======== */
+.soluzioni-abitative{
+    text-align: center;
+}
+
+.up-side{
+    display: flex;
+    justify-content: center;
+}
+
+.testo-soluzioni{
+    width: 60%;
+    border-left: 0.5px solid var(--color-oro);
+    border-right: 0.5px solid var(--color-oro);
+    border-bottom: 0px;
+    border-top: 0px;
+    padding: 80px;
+}
+
+.down-side{
+    display: flex;
+    justify-content: center;
+}
+
+.planimetria-container{
+    width: 1000px;
+    padding: var(--padding-medium);
+    border: 1.5px solid var(--color-oro);
+}
+
+.soluzioni-abitative .prev-button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.soluzioni-abitative .next-button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    z-index: 10;
+}
+
+.swiper-custom-button-prev-3, .swiper-custom-button-next-3{
+    background: var(--color-oro);
+    padding: var(--padding-default) var(--padding-medium);
+    cursor: pointer;
+}
+
+.swiper-custom-button-prev-3{
+    transform: rotateY(180deg);
+}
+
+.swiper-custom-button-prev-3 svg, .swiper-custom-button-next-3 svg{
+    height: 10px;
+}
+
+.soluzioni-abitative .swiper-slide{
+    display: flex;
+    justify-content: center;
+}
+
+.soluzioni-abitative .slide-content{
+    width: 680px !important;
+}
+
+.plan-sopra{
+    position: relative;
+    padding: var(--padding-medium);
+}
+
+.plan-sopra .title{
+    font-size: 30px;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--margin-default);
+}
+
+.plan-sopra .icona{
+    max-width: 115px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.plan-image img{
+    width: 100% !important;
+}
+
+.bordi{
+    display: flex;
+    justify-content: center;
+}
+
+.bordi-laterali{
+    height: 100px;
+    width: 60%;
+    border-left: 0.5px solid var(--color-oro);
+    border-right: 0.5px solid var(--color-oro);
+    border-bottom: 0px;
+    border-top: 0px;
+}

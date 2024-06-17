@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 import LogoWhite from '../../assets/images/logo_white.svg';
+import LogoBlack from '../../assets/images/logo_black.svg';
 import './header.css';
 
 function Navbar() {

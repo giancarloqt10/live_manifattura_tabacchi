@@ -1,0 +1,69 @@
+/* ===== MAPS ========= */
+.maps{
+    background: url('../../assets/images/manifattura_maps.png');
+    background-size: cover;
+    height: 350px;
+}
+
+/* ===== PARTNERS ======= */
+.partners{
+    background: var(--color-grigio-caldo);
+    text-align: center;
+    padding: 60px 40px;
+    border-bottom: 1.5px solid var(--color-oro);
+}
+
+.partners-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.partner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.partner-image{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    height: 60px;
+}
+
+.logo-partner{
+    width: 120px;
+}
+
+.logo-2{
+    width: 80px;
+    margin-left: 40px;
+}
+
+.logo-3{
+    width: 100px;
+}
+
+.logo-4{
+    width: 60px;
+}
+
+/* ===== POLICIES ======= */
+.policies{
+    display: flex;
+    justify-content: space-around;
+    padding: var(--padding-medium) 50px;
+    background: var(--color-grigio-caldo);
+}
+
+.barra-verticale{
+    height: 20px;
+    width: 1px;
+    background: var(--color-nero);
+}
+
+.policy a{
+    text-decoration: none;
+    color: var(--color-nero);
+}

@@ -1,13 +1,15 @@
 import React from 'react';
-import { Link } from 'react-scroll';
+import Maps from './Maps';
+import Partners from './Partners';
+import Policies from './Policies';
 import './footer.css';
 
 function Footer() {
   return (
-    <footer className="footer">
-      <div className="footer-content">
-        <Link to="header" smooth={true} duration={500}>Torna all'inizio</Link>
-      </div>
+    <footer className="footer" id="footer">
+      <Maps />
+      <Partners />
+      <Policies />
     </footer>
   );
 }

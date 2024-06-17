@@ -1,0 +1,100 @@
+/* ======= STORIA ======== */
+.storia{
+    background: var(--color-nero);
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 70px var(--padding-medium);
+}
+
+.storia .sinistra{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.storia .destra{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+.testo-storia{
+    width: 60%;
+    text-align: left !important;
+}
+
+.carousel-2{
+    position: relative;
+}
+
+.carousel-2 .contorno{
+    height: 300px;
+    width: 100%;
+    border: 1px solid var(--color-oro);
+    position: absolute;
+    top: -40px;
+    right: -40px;
+}
+
+/* ==== SWIPER ====== */
+.carousel-2 .swiper-wrapper{
+    width: 300px;
+    height: 300px;
+}
+
+.carousel-2 .swiper-slide{
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-2 .swiper-slide img{
+    height: 100%;
+}
+
+.carousel-2 .swiper-navigation{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.swiper-custom-button-prev-2, .swiper-custom-button-next-2{
+    background: var(--color-oro);
+    padding: var(--padding-default) var(--padding-medium);
+    cursor: pointer;
+}
+
+.swiper-custom-button-prev-2{
+    transform: rotateY(180deg);
+}
+
+.swiper-custom-button-prev-2 svg, .swiper-custom-button-next-2 svg{
+    height: 10px;
+}
+
+.scrollbar-container{
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.swiper-scrollbar-2{
+    position: inherit !important;
+    bottom: inherit !important;
+}
+
+.swiper-scrollbar-2.swiper-scrollbar-horizontal{
+    width: calc(100% - 2.5rem) !important;
+}
+
+.swiper-scrollbar-2.swiper-scrollbar-horizontal{
+    background: var(--color-bronzo) !important;
+}
+
+.carousel-2 .swiper-scrollbar-drag{
+    background: var(--color-oro) !important;
+}
+
+.carousel-2 .swiper-button-disabled{
+    background: var(--color-bronzo);
+}

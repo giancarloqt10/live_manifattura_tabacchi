@@ -16,9 +16,12 @@ function App() {
       <Element name="Progetto">
         <Progetto />
       </Element>
-      <Element name="Storia"> */
+      <Element name="Storia">
         <Storia />
-      </Element> 
+      </Element>
+      <Element name="Servizi">
+        <Servizi />
+      </Element>
       <Element name="Soluzioni-abitative">
         <SoluzioniAbitative />
       </Element>
@@ -27,7 +30,7 @@ function App() {
       </Element>
       <Element name="Footer">
         <Footer />
-       </Element>
+      </Element>
     </div>
   );
 }

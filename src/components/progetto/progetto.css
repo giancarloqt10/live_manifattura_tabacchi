@@ -1,0 +1,93 @@
+/* ========== PROGETTO ========== */
+.progetto{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.up-progetto{
+    display: flex;
+    justify-content: center;
+    padding: var(--padding-medium);
+    margin-top: 50px;
+}
+
+.testo-progetto{
+    width: 70%;
+}
+
+.testo-progetto .descrizione{
+    font-size: 30px;
+    
+}
+
+.testo-progetto .paragrafo{
+    margin-bottom: var(--margin-medium);
+}
+
+.down-progetto{
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+/* ==== SWIPER ====== */
+.carousel{
+    padding-left: 10%;
+}
+
+.carousel .swiper-slide{
+    width: 60%;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+.swiper-navigation{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.swiper-custom-button-prev, .swiper-custom-button-next{
+    background: var(--color-oro);
+    padding: var(--padding-default) var(--padding-medium);
+    cursor: pointer;
+}
+
+.swiper-custom-button-prev{
+    transform: rotateY(180deg);
+}
+
+.swiper-custom-button-prev svg, .swiper-custom-button-next svg{
+    height: 10px;
+}
+
+.scrollbar-container{
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.swiper-scrollbar{
+    position: inherit !important;
+    bottom: inherit !important;
+}
+
+.swiper-scrollbar.swiper-scrollbar-horizontal{
+    width: calc(100% - 2.5rem) !important;
+}
+
+.swiper-scrollbar.swiper-scrollbar-horizontal{
+    background: var(--color-bronzo) !important;
+}
+
+.swiper-scrollbar-drag{
+    background: var(--color-oro) !important;
+}
+
+.swiper-button-disabled{
+    background: var(--color-bronzo);
+}

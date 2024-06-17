@@ -38,6 +38,7 @@ body{
 
 a{
     color: white;
+    cursor: pointer;
 }
 
 /* Chrome, Safari, Opera */
@@ -83,6 +84,6 @@ input:-ms-autofill:active {
 .title{
     font-size: var(--font-title);
     margin-bottom: var(--margin-medium);
-    font-weight: var(--font-weigth-semi-bold);
+    font-weight: var(--font-weight-bold);
     text-align: center;
 }

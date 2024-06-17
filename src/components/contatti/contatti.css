@@ -1,0 +1,72 @@
+/* ===== CONTATTI ======== */
+.contatti{
+    display: flex;
+    padding: 100px;
+    width: 100%;
+    background: #1F292E;
+    color: white;
+}
+
+.testo-contatti, .form{
+    width: 50%;
+}
+
+.testo-contatti{
+    padding-right: 30px;
+}
+
+.testo-contatti p, .info{
+    margin: 30px 0;
+}
+
+.info span{
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.campo-form{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+
+.label-form{
+    width: 17%;
+}
+
+.campo-form input, .campo-form select, .campo-form textarea{
+    width: 83%;
+    margin-left: 15px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+}
+
+.campo-form input:focus, .campo-form select:focus, .campo-form textarea:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.checkbox-group{
+    display: flex;
+    align-items: flex-start;
+}
+
+.checkbox-group div{
+    font-size: 11px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+    margin-top: -3px;
+}
+
+.submit{
+    background: white; 
+    padding: 10px 30px; 
+    margin-top: 20px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;;
+}
