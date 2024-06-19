@@ -91,3 +91,60 @@
 .swiper-button-disabled{
     background: var(--color-bronzo);
 }
+
+
+/* ===== MEDIA QUERIES ====== */
+/* @media screen and (max-width: 1200px) {
+    
+} */
+
+@media screen and (max-width: 1050px) {
+    /* ====== PROGETTO ======== */
+    .down-progetto{
+        position: relative;
+    }
+    .carousel{
+        padding-left: 5%;
+    }
+    .swiper-navigation{
+        position: absolute;
+        justify-content: center;
+        bottom: 60px;
+        right: 50%;
+        transform: translateX(50%);
+        z-index: 5;
+    }
+    .scrollbar-container{
+        margin-top: 20px;
+    }
+}
+
+/* @media screen and (max-width: 892px) {
+    
+} */
+
+@media screen and (max-width: 750px) {
+    /* ======= PROGETTO ========= */
+    .up-progetto{
+        padding: 0;
+    }
+    .testo-progetto{
+        width: initial;
+        padding: 0 30px 20px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    /* ===== PROGETTO ====== */
+    .swiper-navigation{
+        display: none;
+    }
+}
+
+/* @media screen and (max-width: 500px) {
+    
+} */
+
+/* @media screen and (max-width: 369px) {
+    
+} */

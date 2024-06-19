@@ -101,3 +101,114 @@
     border-bottom: 0px;
     border-top: 0px;
 }
+
+
+/* ===== MEDIA QUERIES ====== */
+/* @media screen and (max-width: 1200px) {
+} */
+
+@media screen and (max-width: 1050px) {
+    /* ====== SOLUZIONI ABITATIVE ======= */
+    .planimetria-container{
+        width: 875px;
+    }
+}
+
+@media screen and (max-width: 892px) {
+    /* ====== SOLUZIONI ABITATIVE ======= */
+    .testo-soluzioni{
+        padding: 60px 80px;
+    }
+    .planimetria-container{
+        width: 745px;
+    }
+    .soluzioni-abitative .slide-content{
+        width: 580px !important;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    /* ====== SOLUZIONI ABITATIVE ======= */
+    .testo-soluzioni{
+        padding: 60px;
+        border: none;
+        width: 80%;
+    }
+    .planimetria-container{
+        width: 600px;
+        margin-bottom: 6rem;
+    }
+    .soluzioni-abitative .slide-content{
+        width: 450px !important;
+    }
+    .plan-sopra{
+        position: initial;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .plan-sopra .icona{
+        max-width: 115px;
+        position: initial;
+        left: initial;
+        top: initial;
+    }
+    .bordi{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    /* ====== SOLUZIONI ABITATIVE ======= */
+    .planimetria-container{
+        width: 490px;
+        margin-bottom: 6rem;
+    }
+    .soluzioni-abitative .slide-content{
+        width: 400px !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    /* ====== SOLUZIONI ABITATIVE ====== */
+    .testo-soluzioni{
+        width: 100%;
+    }
+    .planimetria-container{
+        width: 368px;
+        margin-bottom: 6rem;
+    }
+    .plan-image{
+        padding: 20px;
+    }
+    .soluzioni-abitative .swiper-wrapper{
+        margin-bottom: 50px;
+    }
+    .soluzioni-abitative .prev-button{
+        top: initial;
+        bottom: 0;
+        left: 44%;
+        transform: translateX(-50%);
+        z-index: 1000;
+    }
+    
+    .soluzioni-abitative .next-button{
+        top: initial;
+        bottom: 0;
+        right: 44%;
+        transform: translateX(50%);
+        z-index: 10;
+    }
+}
+
+@media screen and (max-width: 369px) {
+    /* ===== SOLUZIONI ABITATIVE ====== */
+    .testo-soluzioni{
+        padding: 40px;
+    }
+    .planimetria-container{
+        width: 300px;
+        margin-bottom: 6rem;
+    }
+}

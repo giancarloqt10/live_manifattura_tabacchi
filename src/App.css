@@ -87,3 +87,9 @@ input:-ms-autofill:active {
     font-weight: var(--font-weight-bold);
     text-align: center;
 }
+
+@media screen and (max-width: 500px) {
+    .title{
+        font-size: 26px;
+    }
+}

@@ -70,3 +70,97 @@
     cursor: pointer;
     font-family: "Montserrat", sans-serif;;
 }
+
+
+/* ===== MEDIA QUERIES ====== */
+@media screen and (max-width: 1200px) {
+    /* ====== CONTATTI ====== */
+    .testo-contatti{
+        padding-right: 50px;
+    }
+    .label-form{
+        width: 25%;
+    }
+    
+    .campo-form input, .campo-form select, .campo-form textarea{
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    /* ====== CONTATTI ====== */
+    .contatti{
+        flex-direction: column;
+    }
+    .testo-contatti, .form{
+        width: 100%;
+    }
+    .testo-contatti{
+        margin-bottom: 30px;
+        padding-right: 0;
+    }
+    .label-form{
+        width: 10%;
+    }
+    
+    .campo-form input, .campo-form select, .campo-form textarea{
+        width: 82%;
+    }
+}
+
+@media screen and (max-width: 892px) {
+    /* ====== CONTATTI ====== */
+    .contatti{
+        padding: 80px;
+    }
+    .label-form{
+        width: 17%;
+    }
+    
+    .campo-form input, .campo-form select, .campo-form textarea{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    /* ===== CONTATTI ====== */
+    .label-form{
+        width: 15%;
+    }
+    
+    .campo-form input, .campo-form select, .campo-form textarea{
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    /* ====== CONTATTI ====== */
+    .contatti{
+        padding: 80px 50px;
+    }
+    .campo-form{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .label-form{
+        margin-bottom: 20px;
+    }
+    .campo-form input, .campo-form select, .campo-form textarea{
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    /* ====== CONTATTI ====== */
+    .contatti{
+        padding: 80px 40px;
+    }
+}
+
+@media screen and (max-width: 369px) {
+    /* ====== CONTATTI ====== */
+    .contatti{
+        padding: 60px 25px;
+    }
+}

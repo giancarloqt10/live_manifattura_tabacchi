@@ -4,7 +4,7 @@ import './storia.css';
 
 function Storia() {
   return (
-    <div className="storia" id="storia">
+    <div className='storia' id='storia'>
       <div className="sinistra">
         <div className="testo-storia">
           <div className="pre-title" style={{textAlign: 'left'}}>STORIA</div>

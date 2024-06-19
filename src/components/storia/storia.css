@@ -98,3 +98,70 @@
 .carousel-2 .swiper-button-disabled{
     background: var(--color-bronzo);
 }
+
+/* ===== MEDIA QUERIES ====== */
+/* @media screen and (max-width: 1200px) {
+} */
+
+@media screen and (max-width: 1050px) {
+    /* ======= STORIA ======== */
+    .storia .swiper-navigation{
+        display: flex;
+        justify-content: center;
+        transform: translateX(50%);
+    }
+}
+
+/* @media screen and (max-width: 892px) {
+    
+} */
+
+@media screen and (max-width: 750px) {
+    /* ======== STORIA ========== */
+    .storia{
+        grid-template-columns: 1fr;
+        row-gap: 5rem;
+    }
+    .testo-storia{
+        width: 75%;
+    }
+    .storia .pre-title, .storia .title, .storia .paragrafo{
+        text-align: center !important;
+    }
+    .carousel-2 .contorno{
+        height: 340px;
+        width: 340px;
+        border: 1px solid var(--color-oro);
+        position: absolute;
+        top: -20px;
+        right: -20px;
+    }
+    .storia .scrollbar-container{
+        margin-top: 30px;
+    }
+}
+
+/* @media screen and (max-width: 650px) {
+    
+} */
+
+/* @media screen and (max-width: 500px) {
+    
+} */
+
+@media screen and (max-width: 369px) {
+    /* ======== STORIA ======= */
+    .storia{
+        row-gap: 3rem;
+    }
+    .testo-storia{
+        width: 100%;
+    }
+    .carousel-2 .swiper-wrapper{
+        height: 275px;
+        width: 275px;
+    }
+    .carousel-2 .contorno{
+        display: none;
+    }
+}

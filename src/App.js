@@ -12,7 +12,9 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Element name='Header'>
+        <Header />
+      </Element>
       <Element name="Progetto">
         <Progetto />
       </Element>
