@@ -52,7 +52,7 @@ function Header() {
     <div className='header' id='header'>
         <div className="top">
             <div className="banner" id="banner" ref={bannerRef}>
-                Scegli tua nuova casa in un contesto unico, dove l'heritage del luogo incontra il design contemporaneo. <Link to="Contatti">CONTATTACI</Link>
+                Scegli tua nuova casa in un contesto unico, dove l'heritage del luogo incontra il design contemporaneo. <Link to="Contatti" smooth={true} duration={1000} offset={-110}>CONTATTACI</Link>
             </div>
             <Navbar />
         </div>
