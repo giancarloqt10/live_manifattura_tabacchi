@@ -1,35 +1,44 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import './contatti.css';
 
 function Form(){
-    const formRef = useRef(null);
+    const [statusMessage, setStatusMessage] = useState('');
 
-    useEffect(() => {
-        const form = formRef.current;
-
-        const handleSubmit = (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
-        const formData = new FormData(form);
+        let form = document.getElementById('form');
+        let formData = new FormData(form);
 
-        // Iterare attraverso i dati del form
-        formData.forEach((value, key) => {
-            // Visualizzare i dati nella console
-            console.log(key + ': ' + value);
-        });
+        // Verifica che tutti i campi richiesti siano compilati
+        let isValid = true;
+        for (let [key, value] of formData.entries()) {
+            if (!value) {
+                isValid = false;
+                break;
+            }
+        }
 
-        // Svuotare i campi del form
-        form.reset();
-        };
+        if (isValid) {
+            // Mostra messaggio di successo
+            setStatusMessage({ type: 'success', text: 'Form inviato con successo!' });
 
-        form.addEventListener('submit', handleSubmit);
+            // Visualizza i dati nella console
+            formData.forEach((value, key) => {
+                console.log(key + ': ' + value);
+            });
 
-        // Cleanup the event listener on component unmount
-        return () => {
-        form.removeEventListener('submit', handleSubmit);
-        };
-    }, []);
+            // Svuota i campi del form
+            form.reset();
+        }
+
+        // Nascondi il messaggio dopo 5 secondi
+        setTimeout(() => {
+            setStatusMessage('');
+        }, 5000);
+    };
+
     return(
-        <form id="form" className="form" ref={formRef}>
+        <form id="form" className="form" onSubmit={handleSubmit}>
             <div className="campo-form">
                 <div className="label-form" id="name-label">NOME*</div>
                 <input type="text" name="name" id="name" maxLength={256} aria-labelledby="name-label" required />
@@ -72,6 +81,17 @@ function Form(){
                 <div htmlFor="accetta-marketing">Acconsento all'invio di comunicazioni di marketing, per mezzo di sistemi informatici automatizzati, ivi inclusi comunicazioni commerciali o promozionali a mezzo email o SMS, ovvero per ricerche ed analisi di mercato</div>
             </div>
             <button className="submit" id="submit" type="submit">INVIA RICHIESTA</button>
+            {statusMessage && (
+                <div style={{
+                    backgroundColor: statusMessage.type === 'success' ? 'lightgreen' : 'lightcoral',
+                    padding: '10px',
+                    marginTop: '10px',
+                    borderRadius: '5px',
+                    color: '#1a1a1a'
+                }}>
+                    {statusMessage.text}
+                </div>
+            )}
         </form>
     );
 }
