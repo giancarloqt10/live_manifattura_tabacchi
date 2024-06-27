@@ -1,99 +1,115 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './contatti.css';
 
-function Form(){
-    const [statusMessage, setStatusMessage] = useState('');
+function Form() {
+  const [formData, setFormData] = useState({
+    name: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    tipologies: '',
+    message: '',
+    accettaInformativa: false,
+    accettaServizi: false,
+    accettaMarketing: false,
+  });
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        let form = document.getElementById('form');
-        let formData = new FormData(form);
+  const [statusMessage, setStatusMessage] = useState(null);
 
-        // Verifica che tutti i campi richiesti siano compilati
-        let isValid = true;
-        for (let [key, value] of formData.entries()) {
-            if (!value) {
-                isValid = false;
-                break;
-            }
-        }
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === 'checkbox' ? checked : value,
+    });
+  };
 
-        if (isValid) {
-            // Mostra messaggio di successo
-            setStatusMessage({ type: 'success', text: 'Form inviato con successo!' });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios.post('http://localhost/back-end/api/contact.php', formData)
+      .then(response => {
+        setStatusMessage({
+          type: 'success',
+          text: 'Dati inviati con successo!',
+        });
+        setFormData({
+          name: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          tipologies: '',
+          message: '',
+          accettaInformativa: false,
+          accettaServizi: false,
+          accettaMarketing: false,
+        });
+      })
+      .catch(error => {
+        setStatusMessage({
+          type: 'error',
+          text: 'Errore nell\'invio dei dati!',
+        });
+      });
+  };
 
-            // Visualizza i dati nella console
-            formData.forEach((value, key) => {
-                console.log(key + ': ' + value);
-            });
-
-            // Svuota i campi del form
-            form.reset();
-        }
-
-        // Nascondi il messaggio dopo 5 secondi
-        setTimeout(() => {
-            setStatusMessage('');
-        }, 5000);
-    };
-
-    return(
-        <form id="form" className="form" onSubmit={handleSubmit}>
-            <div className="campo-form">
-                <div className="label-form" id="name-label">NOME*</div>
-                <input type="text" name="name" id="name" maxLength={256} aria-labelledby="name-label" required />
-            </div>
-            <div className="campo-form">
-                <div className="label-form" id="last-name-label">COGNOME*</div>
-                <input type="text" name="last-name" maxLength={256} id="last-name" aria-labelledby="last-name-label" required />
-            </div>
-            <div className="campo-form">
-                <div className="label-form" id="email-label">EMAIL*</div>
-                <input type="email" name="email" maxLength={256} id="email" aria-labelledby="email-label" required />
-            </div>
-            <div className="campo-form">
-                <div className="label-form" id="phone-label">TELEFONO*</div>
-                <input type="text" name="phone" maxLength={256} id="phone" aria-labelledby="phone-label" required />
-            </div>
-            <div className="campo-form">
-                <div className="label-form" id="tipologies-label">TIPOLOGIE</div>
-                <select id="tipologies" name="tipologies" style={{color: '#fff'}} aria-labelledby="tipologies-label">
-                    <option value="">Seleziona</option>
-                    <option value="Loft">Loft</option>
-                    <option value="Bilocale">Bilocale</option>
-                    <option value="Trilocale">Trilocale</option>         
-                </select>
-            </div>
-            <div className="campo-form">
-                <div className="label-form" id="message-label">MESSAGGIO</div>
-                <textarea placeholder="" maxLength={5000} id="message" name="message" aria-labelledby="message-label"></textarea>
-            </div>
-            <div className="checkbox-group">
-                <input type="checkbox" id="accetta-informativa" name="accetta-informativa" required />
-                <div htmlFor="accetta-informativa">Dichiaro di aver ricevuto idonea informativa e di prestare il suo consenso, esplicito ed inequivocabile, in relazione alle finalità del trattamento, come espresse al punto 3, lettera b, dell'informativa per il trattamento dei dati</div>
-            </div>
-            <div className="checkbox-group">
-                <input type="checkbox" id="accetta-servizi" name="accetta-servizi" required />
-                <div htmlFor="accetta-servizi">Acconsento alla registrazione dei suoi dati per ricevere servizio personalizzato sulle sue reali esigenze d'acquisto</div>
-            </div>
-            <div className="checkbox-group">
-                <input type="checkbox" id="accetta-marketing" name="accetta-marketing" required />
-                <div htmlFor="accetta-marketing">Acconsento all'invio di comunicazioni di marketing, per mezzo di sistemi informatici automatizzati, ivi inclusi comunicazioni commerciali o promozionali a mezzo email o SMS, ovvero per ricerche ed analisi di mercato</div>
-            </div>
-            <button className="submit" id="submit" type="submit">INVIA RICHIESTA</button>
-            {statusMessage && (
-                <div style={{
-                    backgroundColor: statusMessage.type === 'success' ? 'lightgreen' : 'lightcoral',
-                    padding: '10px',
-                    marginTop: '10px',
-                    borderRadius: '5px',
-                    color: '#1a1a1a'
-                }}>
-                    {statusMessage.text}
-                </div>
-            )}
-        </form>
-    );
+  return (
+    <form id="form" className="form" onSubmit={handleSubmit}>
+      <div className="campo-form">
+        <div className="label-form" id="name-label">NOME*</div>
+        <input type="text" name="name" id="name" maxLength={256} aria-labelledby="name-label" required value={formData.name} onChange={handleChange} />
+      </div>
+      <div className="campo-form">
+        <div className="label-form" id="last-name-label">COGNOME*</div>
+        <input type="text" name="lastName" maxLength={256} id="last-name" aria-labelledby="last-name-label" required value={formData.lastName} onChange={handleChange} />
+      </div>
+      <div className="campo-form">
+        <div className="label-form" id="email-label">EMAIL*</div>
+        <input type="email" name="email" maxLength={256} id="email" aria-labelledby="email-label" required value={formData.email} onChange={handleChange} />
+      </div>
+      <div className="campo-form">
+        <div className="label-form" id="phone-label">TELEFONO*</div>
+        <input type="text" name="phone" maxLength={256} id="phone" aria-labelledby="phone-label" required value={formData.phone} onChange={handleChange} />
+      </div>
+      <div className="campo-form">
+        <div className="label-form" id="tipologies-label">TIPOLOGIE</div>
+        <select id="tipologies" name="tipologies" style={{ color: '#fff' }} aria-labelledby="tipologies-label" value={formData.tipologies} onChange={handleChange}>
+          <option value="">Seleziona</option>
+          <option value="Loft">Loft</option>
+          <option value="Bilocale">Bilocale</option>
+          <option value="Trilocale">Trilocale</option>
+        </select>
+      </div>
+      <div className="campo-form">
+        <div className="label-form" id="message-label">MESSAGGIO</div>
+        <textarea placeholder="" maxLength={5000} id="message" name="message" aria-labelledby="message-label" value={formData.message} onChange={handleChange}></textarea>
+      </div>
+      <div className="checkbox-group">
+        <input type="checkbox" id="accettaInformativa" name="accettaInformativa" checked={formData.accettaInformativa} onChange={handleChange} />
+        <div htmlFor="accettaInformativa">Dichiaro di aver ricevuto idonea informativa...</div>
+      </div>
+      <div className="checkbox-group">
+        <input type="checkbox" id="accettaServizi" name="accettaServizi" checked={formData.accettaServizi} onChange={handleChange} />
+        <div htmlFor="accettaServizi">Acconsento alla registrazione dei suoi dati...</div>
+      </div>
+      <div className="checkbox-group">
+        <input type="checkbox" id="accettaMarketing" name="accettaMarketing" checked={formData.accettaMarketing} onChange={handleChange} />
+        <div htmlFor="accettaMarketing">Acconsento all'invio di comunicazioni di marketing...</div>
+      </div>
+      <button className="submit" id="submit" type="submit">INVIA RICHIESTA</button>
+      {statusMessage && (
+        <div style={{
+          backgroundColor: statusMessage.type === 'success' ? 'lightgreen' : 'lightcoral',
+          padding: '10px',
+          marginTop: '10px',
+          borderRadius: '5px',
+          color: '#1a1a1a'
+        }}>
+          {statusMessage.text}
+        </div>
+      )}
+    </form>
+  );
 }
 
 export default Form;
