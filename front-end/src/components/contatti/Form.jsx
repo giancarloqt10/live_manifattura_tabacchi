@@ -27,7 +27,7 @@ function Form() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost/back-end/api/contact.php', formData)
+    axios.post('http://localhost/live_manifattura_tabacchi_full-stack/back-end/api/contact.php', formData)
       .then(response => {
         setStatusMessage({
           type: 'success',
@@ -54,7 +54,7 @@ function Form() {
   };
 
   return (
-    <form id="form" className="form" onSubmit={handleSubmit}>
+    <form id="form" className="form" onSubmit={handleSubmit} method='POST'>
       <div className="campo-form">
         <div className="label-form" id="name-label">NOME*</div>
         <input type="text" name="name" id="name" maxLength={256} aria-labelledby="name-label" required value={formData.name} onChange={handleChange} />

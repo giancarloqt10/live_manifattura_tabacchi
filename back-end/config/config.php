@@ -1,7 +1,13 @@
 <?php
+require '../vendor/autoload.php';
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 $servername = "localhost";
 $username = "root";
-$password = ""; // la tua password di MySQL
+$password = "193540"; // la tua password di MySQL
 $dbname = "Live_Manifattura_Tabacchi_Database";
 
 // Creazione connessione
