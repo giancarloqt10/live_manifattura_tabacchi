@@ -9,9 +9,10 @@ $servername = "localhost";
 $username = "root";
 $password = "193540"; // la tua password di MySQL
 $dbname = "Live_Manifattura_Tabacchi_Database";
+$socket = "/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock"; // Path al socket di MySQL
 
 // Creazione connessione
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname, null, $socket);
 
 // Controllo connessione
 if ($conn->connect_error) {
