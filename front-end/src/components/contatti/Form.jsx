@@ -4,18 +4,19 @@ import './contatti.css';
 
 function Form() {
   const [formData, setFormData] = useState({
-    name: '',
+    nome: '',
     lastName: '',
     email: '',
     phone: '',
     tipologies: '',
-    message: '',
+    messaggio: '',
     accettaInformativa: false,
     accettaServizi: false,
     accettaMarketing: false,
   });
 
   const [statusMessage, setStatusMessage] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -25,39 +26,45 @@ function Form() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    axios.post('http://localhost/live_manifattura_tabacchi_full-stack/back-end/api/contact.php', formData)
-      .then(response => {
-        setStatusMessage({
-          type: 'success',
-          text: 'Dati inviati con successo!',
-        });
-        setFormData({
-          name: '',
-          lastName: '',
-          email: '',
-          phone: '',
-          tipologies: '',
-          message: '',
-          accettaInformativa: false,
-          accettaServizi: false,
-          accettaMarketing: false,
-        });
-      })
-      .catch(error => {
-        setStatusMessage({
-          type: 'error',
-          text: 'Errore nell\'invio dei dati!',
-        });
+    setIsSubmitting(true);
+    try {
+      const response = await axios.post('http://localhost/live_manifattura_tabacchi_full-stack/back-end/api/contact.php', formData);
+      setStatusMessage({
+        type: 'success',
+        text: 'Dati inviati con successo!',
       });
+      setFormData({
+        nome: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        tipologies: '',
+        messaggio: '',
+        accettaInformativa: false,
+        accettaServizi: false,
+        accettaMarketing: false,
+      });
+      setTimeout(() => {
+        setStatusMessage(null);
+      }, 4000); // Nascondi il messaggio di successo dopo 5 secondi
+    } catch (error) {
+      setStatusMessage({
+        type: 'error',
+        text: 'Errore nell\'invio dei dati!',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <form id="form" className="form" onSubmit={handleSubmit} method='POST'>
+      {/* Campi del form */}
       <div className="campo-form">
         <div className="label-form" id="name-label">NOME*</div>
-        <input type="text" name="name" id="name" maxLength={256} aria-labelledby="name-label" required value={formData.name} onChange={handleChange} />
+        <input type="text" name="nome" id="nome" maxLength={256} aria-labelledby="name-label" required value={formData.nome} onChange={handleChange} />
       </div>
       <div className="campo-form">
         <div className="label-form" id="last-name-label">COGNOME*</div>
@@ -82,7 +89,7 @@ function Form() {
       </div>
       <div className="campo-form">
         <div className="label-form" id="message-label">MESSAGGIO</div>
-        <textarea placeholder="" maxLength={5000} id="message" name="message" aria-labelledby="message-label" value={formData.message} onChange={handleChange}></textarea>
+        <textarea placeholder="" maxLength={5000} id="messaggio" name="messaggio" aria-labelledby="message-label" value={formData.messaggio} onChange={handleChange}></textarea>
       </div>
       <div className="checkbox-group">
         <input type="checkbox" id="accettaInformativa" name="accettaInformativa" checked={formData.accettaInformativa} onChange={handleChange} />
@@ -96,7 +103,9 @@ function Form() {
         <input type="checkbox" id="accettaMarketing" name="accettaMarketing" checked={formData.accettaMarketing} onChange={handleChange} />
         <div htmlFor="accettaMarketing">Acconsento all'invio di comunicazioni di marketing...</div>
       </div>
-      <button className="submit" id="submit" type="submit">INVIA RICHIESTA</button>
+      <button className="submit" id="submit" type="submit" disabled={isSubmitting}>
+        {isSubmitting ? 'Invio...' : 'INVIA RICHIESTA'}
+      </button>
       {statusMessage && (
         <div style={{
           backgroundColor: statusMessage.type === 'success' ? 'lightgreen' : 'lightcoral',

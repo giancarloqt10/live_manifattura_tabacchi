@@ -7,12 +7,11 @@ error_reporting(E_ALL);
 
 $servername = "localhost";
 $username = "root";
-$password = "193540"; // la tua password di MySQL
+$password = ""; // la tua password di MySQL
 $dbname = "Live_Manifattura_Tabacchi_Database";
-$socket = "/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock"; // Path al socket di MySQL
 
 // Creazione connessione
-$conn = new mysqli($servername, $username, $password, $dbname, null, $socket);
+$conn = new mysqli($servername, $username, $password, $dbname, null);
 
 // Controllo connessione
 if ($conn->connect_error) {
